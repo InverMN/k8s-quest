@@ -23,7 +23,13 @@ spec:
         - name: config
           mountPath: /etc/nginx/nginx.conf
           subPath: nginx.conf
+        - name: password
+          mountPath: /etc/nginx/.htpasswd
+          subPath: .htpasswd
       volumes:
       - name: config
         configMap:
           name: nginx-config
+      - name: password
+        secret:
+          name: nginx-secret
