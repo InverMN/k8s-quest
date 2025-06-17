@@ -32,4 +32,4 @@ spec:
           name: nginx-config
       - name: password
         secret:
-          name: nginx-secret
+          secretName: nginx-secret
