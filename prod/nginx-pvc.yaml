@@ -4,7 +4,6 @@ metadata:
   name: nginx-pvc
 spec:
   storageClassName: sc
-  volumeName: nginx-pv
   accessModes:
     - ReadWriteOnce
   volumeMode: Filesystem
