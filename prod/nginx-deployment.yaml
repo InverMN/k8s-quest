@@ -26,6 +26,8 @@ spec:
         - name: password
           mountPath: /etc/nginx/.htpasswd
           subPath: .htpasswd
+        - name: www
+          mountPath: /usr/local/nginx
       volumes:
       - name: config
         configMap:
@@ -33,3 +35,6 @@ spec:
       - name: password
         secret:
           secretName: nginx-secret
+      - name: www
+        persistentVolumeClaim: 
+          claimName: nginx-pvc
